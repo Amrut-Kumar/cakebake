@@ -13,8 +13,6 @@ namespace API.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
-            services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
             services.AddDbContext<StoreContext>(opt =>
             {
                 opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
@@ -23,7 +21,8 @@ namespace API.Extensions
             {
                 opt.UseSqlite(config.GetConnectionString("IdentityConnection"));
             });
-            services.AddSingleton<IConnectionMultiplexer>(c => {
+            services.AddSingleton<IConnectionMultiplexer>(c =>
+            {
                 var options = ConfigurationOptions.Parse(config.GetConnectionString("Redis"));
                 return ConnectionMultiplexer.Connect(options);
             });
@@ -50,9 +49,9 @@ namespace API.Extensions
                 };
             });
 
-            services.AddCors( opt =>
+            services.AddCors(opt =>
             {
-                opt.AddPolicy("CorsPolicy", policy => 
+                opt.AddPolicy("CorsPolicy", policy =>
                 {
                     policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
                 });
