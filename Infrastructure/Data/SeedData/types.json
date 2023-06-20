@@ -1,18 +1,18 @@
 [
   {
     "Id": 1,
-    "Name": "Boards"
+    "Name": "Cakes"
   },
   {
     "Id": 2,
-    "Name": "Hats"
+    "Name": "Muffins & Cupcakes"
   },
   {
     "Id": 3,
-    "Name": "Boots"
+    "Name": "Mousse Jars"
   },
   {
     "Id": 4,
-    "Name": "Gloves"
+    "Name": "Pastries"
   }
 ]
