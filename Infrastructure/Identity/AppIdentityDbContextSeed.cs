@@ -17,7 +17,7 @@ namespace Infrastructure.Identity
                         Street = "Ambedkar Road",
                         City = "Bengaluru",
                         State = "Karnataka",
-                        ZipCode = "560066"
+                        Zipcode = "560066"
                     }
                 };
 
